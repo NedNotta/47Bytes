@@ -52,13 +52,12 @@ document.getElementById("textE").className = 'start';
     document.getElementById("textE").value = "loading...";
     setTimeout(function(){
       output.value = "";
-      for (var i = 0; i < text.length; i++) {
+      for (i = 0; i < n; i++) {
          output.value += text[i].charCodeAt(0).toString(2) + " ";
       }
     document.getElementById("textE").value = output;
 }, 2000);
-setTimeout(function(){document.getElementById("textE").className = '';},4010);
-}
+setTimeout(function(){document.getElementById("textE").className = '';},4010);}
     </script>
     
   </body>
