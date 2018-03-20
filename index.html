@@ -1,0 +1,158 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Phayden to English</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href='../Images/SearchIcon.png'>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Kurale');
+    body {
+      font-family: 'Kurale', serif;
+      text-align: center;
+      background-color: ;
+    }
+
+    #searchBar {
+      background-image: url('../Images/searchIcon.png');
+      background-position: 10px 12px;
+      background-repeat: no-repeat;
+      background-size: 20px;
+      font-size: 16px;
+      padding: 12px 20px 12px 40px;
+      border: 1px solid #595959;
+      margin-bottom: 12px;
+      width: 20%;
+      -webkit-transition: width 0.7s ease-in-out;
+      transition: width 0.4s ease-in-out;
+    }
+    
+    #searchBar:focus {
+    width: 100%;
+    }
+
+    #fullList {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    #fullList li a {
+      border: 1px solid #595959;
+      margin-top: -1px;
+      background-color: #f6f6f6;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      color: black;
+      display: block;
+    }
+
+    #fullList li p {
+      border: 1px solid #001a09;
+      margin-top: -1px;
+      background-color: #006622;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+      transition: 2s;
+      margin-bottom: -1px;
+    }
+
+    #fullList li p:before {
+      content: "Meaning -- \"";
+    }
+
+    #fullList li p:after {
+      content: "\"";
+    }
+
+    #fullList li p:hover {
+      background-color: #004d1a;
+    }
+  </style>
+</head>
+
+<body><input type="text" id="searchBar" onkeyup="search()" placeholder="Search Translations...">
+  <ul id="fullList" onLoad='onLoad1()'>
+    <li><a>I hate you </a>
+      <p>I love you </p>
+    </li>
+    <li><a>Samantha </a>
+      <p>Lack of nickname </p>
+    </li>
+    <li><a>Fuck you </a>
+      <p>You made me angry, I do not like you at this moment in time </p>
+    </li>
+    <li><a>Vhat </a>
+      <p>What </p>
+    </li>
+    <li><a>Vhen </a>
+      <p>When </p>
+    </li>
+    <li><a>Vant </a>
+      <p>Want </p>
+    </li>
+    <li><a>... </a>
+      <p>I have a feeling I do not like about this current situation... </p>
+    </li>
+    <li><a>Sam? or Samantha? </a>
+      <p>I am worried about you, Either you aren't answering or I am having a anxitey attack
+      </p>
+    </li>
+    <li><a>What's your favorite _____?
+ </a>
+      <p>I'm planning on taking you somewhere or getting you something of that topic
+      </p>
+    </li>
+    <li><a>???
+ </a>
+      <p>You never answered my question(s)
+      </p>
+    </li>
+    <li><a>Huh?
+ </a>
+      <p>Pardon?
+      </p>
+    </li>
+    <li><a><abbr title='Me NO NO Enrish'>MNNE</abbr>
+ </a>
+      <p>I cannot spell/speak properly today.
+      </p>
+    </li>
+    <!-- 
+    <li><a>
+ </a>
+      <p>
+      </p>
+    </li>
+-->
+  </ul>
+  <script>
+    function search() {
+      var input,
+        filter,
+        ul,
+        li,
+        a,
+        i;
+      input = document.getElementById('searchBar');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("fullList");
+      li = ul.getElementsByTagName('li');
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

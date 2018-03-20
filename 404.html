@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Error: 404</title>
+    <link rel="shortcut icon" href='./Images/Error404.png'>
+    <style>
+   @import url('https://fonts.googleapis.com/css?family=VT323');
+    body{font-family: 'VT323', monospace;text-align:center;background-color:white;color:black;font-size:xx-large;}
+    img:hover{transform:scale(1.1);}
+    img{float:left;transition:2s;}
+    a{color:blue;text-decoration:underline;cursor:pointer;}
+    div{margin:auto;padding:15%;}
+    #report{display:none;}
+    .needed{color:red;}
+    input,textarea{border:2px solid black;border-radius:5px;}
+    </style>
+  </head>
+  <body>
+  <div id='Main'>
+      <img title='Error 404' alt='Error 404' height='150px' width='150px'  src='https://47bytes.bitballoon.com/Images/Error404.png'>
+      <h3>
+        You lost your bytes!
+      </h3>
+      <p>
+        The page you are looking for doesn't exist.
+      </p>
+      <br><br>
+      <a href="https://47Bytes.bitballoon.com">Click me to get backup bytes!</a>
+    </div>
+    <div id='report'>
+      <h3>
+      Report your issue here!
+      </h3>
+      <p>
+      If it has a <span class='needed'>*</span> it is required 
+      </p>
+      <form name='Error:404=Issue' action='https://47bytes.bitballoon.com/thankyou'>
+        <span class='needed'>*</span><input id='source' type='url' name='url'>
+      <span class='needed'>*<input type='text' name='name' placeholder='name?'></span>
+      <input type='email' name='email' placeholder='email?'><br><br>
+      <span class='needed'>*</span><textarea cols='10' rows='5' placeholder='What went wrong?'></textarea><br>
+      <input type='submit'>
+      </form>
+    </div>
+    <script>
+function bugReport() {
+document.getElementById('Main').style.display='none';
+document.getElementById("report").style.display='block';
+document.getElementById("source").value = window.location.href;
+}
+    </script>
+  </body>
+</html>
