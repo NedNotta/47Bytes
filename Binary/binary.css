@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+body {
+  text-align:center;
+  font-family: 'Exo 2', sans-serif;
+  background-image: url('https://47bytes.bitballoon.com/Binary/Images/BinaryBG.jpg');
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+@media only screen and (min-width : 320px) and (max-width : 480px) {
+	background: url(./Images/BinaryBG.jpg) no-repeat center center fixed;
+}
+a {
+  color:pink;
+  text-decoration:underline;
+  cursor: pointer;
+}
+code {
+  font-family: 'Press Start 2P', cursive;
+}
+#main ,#text_to_binary{
+    color:white;
+    margin: auto;
+    margin-top:5%;
+    min-width: 50%;
+    max-width:80%;
+    background-color:rgba(000, 000, 000, 0.7);
+    padding: 10px;
+}
+#text_to_binary {
+  display:none;
+}
+textarea {
+  background-color:black;
+  border:1px solid white;
+  font-family: 'Press Start 2P', cursive;
+  color:#98FB98;
+}
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  ::-webkit-scrollbar-thumb {
+      background: #888; 
+  }
+   ::-webkit-scrollbar-thumb:hover {
+       background: #555; 
+  }
+  button {
+    background-color:black;
+    border:1px solid white;
+    font-family: 'Press Start 2P', cursive;
+    color:#98FB98;
+  }
+  .start {
+    animation-name:loading;
+    animation-duration:4s;
+  }
+@keyframes loading {
+    0%   {filter:blur(0px);}
+    50%  {filter:blur(25px);}
+    100% {filter:blur(0px);}
+}
+.notFinished {text-decoration:line-through;text-decoration-color:red;}
