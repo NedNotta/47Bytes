@@ -1,0 +1,117 @@
+/* Basic Formatting Stuff */
+@import url('https://fonts.googleapis.com/css?family=Patrick+Hand');
+body {
+  margin: 0;
+  background-color:black;
+  color:white;
+  text-align:center;
+  font-family: 'Patrick Hand', cursive;
+}
+ul {
+  text-align:justify;
+}
+ul #Sections {
+  padding-left:50%;
+}
+a {
+  color:pink;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+@media (max-width: 991px) {
+    .mobile-only {
+        display:block !important;
+    }
+ 
+    .desktop-only {
+        display:none !important;
+    }
+}
+
+abbr{
+  color:lightBlue;
+}
+
+/* Special Words or Elements */
+
+.Ned {
+  color:green;
+}
+#DifferencesInSpelling {
+  display:none;
+}
+.Special {
+  color:#4CAF50;
+  font-weight:bold;
+}
+
+
+
+
+
+/* Div's */
+#DifferencesInSpelling, #AorN,#CCW,#fullList{
+  font-family:monospace;
+}
+#fullList{
+  height:150px;
+  overflow-y:scroll;
+  background-color:gray;
+}
+
+
+
+
+
+
+/* Nav Bar Stuff */
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+ul.topnav li {
+  float: left;
+  
+}
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+ul.topnav li a:hover:not(.active) {
+  background-color: #111
+  
+}
+ul.topnav li .active {
+  background-color: #4CAF50;
+  
+}
+ul.topnav li.right {
+  float: right;
+  
+}
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+}
+
+input,textarea {
+  border:2px solid #4CAF50;
+  color:
+    #4CAF50;
+  background-color:black;
+  width:100%;
+  min-width:100%;
+  max-width:100%;
+}
+
+::placeholder {
+  color:orange;
+}

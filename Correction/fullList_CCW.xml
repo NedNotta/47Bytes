@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fullList>
+  <item>
+      <words>Along &amp; A long</words>
+      <word1_description>Along -- moving or extending horizontal</word1_description>
+      <word2_description>A long -- referring to something of great length</word2_description>
+  </item>
+  <item>
+      <words>Aloud &amp; Allowed</words>
+      <word1_description>Aloud -- out loud</word1_description>
+      <word2_description>Allowed -- permitted</word2_description>
+  </item>
+  <item>
+      <words>Altar &amp; Alter</words>
+      <word1_description>Altar -- a sacred table in a church</word1_description>
+      <word2_description>Alter -- to change</word2_description>
+  </item>
+  <item>
+      <words>Amoral &amp; Immoral</words>
+      <word1_description>Amoral -- not concerned with right or wrong</word1_description>
+      <word2_description>Immoral -- not following accepted moral standards</word2_description>
+  </item>
+  <item>
+      <words>Appraise &amp; Apprise</words>
+      <word1_description>Apreaise -- to assess</word1_description>
+      <word2_description>Apprise -- to inform someone</word2_description>
+  </item>
+  
+  <!-- <item>
+      <words></words>
+      <word1_description></word1_description>
+      <word2_description></word2_description>
+  </item>  
+  -->
+</fullList>
