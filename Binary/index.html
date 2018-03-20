@@ -4,7 +4,7 @@
     <title>Binary</title>
     <meta name='author' content='Ned Notta'>
     <link rel='stylesheet' href='./binary.css'>
-    <link rel='shortcut icon' href='../Images/binaryIcon.png'>
+    <link rel='shortcut icon' href='./Images/binaryIcon.png'>
   </head>
   <body>
   <div id='main'>
@@ -33,31 +33,98 @@
     </div>
     
     <script>
-
 function closeAll() {
     document.getElementById("main").style.display = 'none';
     document.getElementById("text_to_binary").style.display = 'none';
 }
-
 function showTtB() {
     closeAll();
     document.getElementById("text_to_binary").style.display = 'block';
 }
-
 function convert() {
 document.getElementById("textE").className = 'start';
     var text = document.getElementById("textE").value;
     var n = text.length;
-    var output = '':
     document.getElementById("textE").value = "loading...";
     setTimeout(function(){
-      output.value = "";
-      for (i = 0; i < n; i++) {
-         output.value += text[i].charCodeAt(0).toString(2) + " ";
-      }
-    document.getElementById("textE").value = output;
+      /*
+      text = text.replace("0","00000000");
+      text = text.replace("1","00000001");
+      text = text.replace("2","00000010");
+      text = text.replace("3","00000011");
+      text = text.replace("4","00000100");
+      text = text.replace("5","00000101");
+      text = text.replace("6","00000110");
+      text = text.replace("7","00000111");
+      text = text.replace("8","00001000");
+      text = text.replace("9","00001001");
+      */
+     for (i = 0; i < n; i++) {
+       text = text.replace(/(?:\r\n|\r|\n)/g, '00001010');
+            text = text.replace(",", "00101100");
+            text = text.replace("?", "00111111");
+            text = text.replace(" ", "00100000");
+            text = text.replace("!", "00100001");
+            text = text.replace('"', "00100010");
+            text = text.replace("'", '00100111');
+            text = text.replace(".", '00101110');
+            text = text.replace("a", "01100001");
+            text = text.replace("b", "01100010");
+            text = text.replace("c", "01100011");
+            text = text.replace("d", "01100100");
+            text = text.replace("e", "01100101");
+            text = text.replace("f", "01100110");
+            text = text.replace("g", "01100111");
+            text = text.replace("h", "01101000");
+            text = text.replace("i", "01101001");
+            text = text.replace("j", "01101010");
+            text = text.replace("k", "01101011");
+            text = text.replace("l", "01101100");
+            text = text.replace("m", "01101101");
+            text = text.replace("n", "01101110");
+            text = text.replace("o", "01101111");
+            text = text.replace("p", "01110000");
+            text = text.replace("q", "01110001");
+            text = text.replace("r", "01110010");
+            text = text.replace("s", "01110011");
+            text = text.replace("t", "01110100");
+            text = text.replace("u", "01110101");
+            text = text.replace("v", "01110110");
+            text = text.replace("w", "01110111");
+            text = text.replace("x", "01111000");
+            text = text.replace("y", "01111001");
+            text = text.replace("z", "01111010");
+            text = text.replace("A", "01000010");
+            text = text.replace("B", "01000010");
+            text = text.replace("C", "01000011");
+            text = text.replace("D", "01000100");
+            text = text.replace("E", "01000101");
+            text = text.replace("F", "01000110");
+            text = text.replace("G", "01000111");
+            text = text.replace("H", "01001000");
+            text = text.replace("I", "01001001");
+            text = text.replace("J", "01001010");
+            text = text.replace("K", "01001011");
+            text = text.replace("L", "01001100");
+            text = text.replace("M", "01001101");
+            text = text.replace("N", "01001110");
+            text = text.replace("O", "01001111");
+            text = text.replace("P", "01010000");
+            text = text.replace("Q", "01010001");
+            text = text.replace("R", "01010010");
+            text = text.replace("S", "01010011");
+            text = text.replace("T", "01010100");
+            text = text.replace("U", "01010101");
+            text = text.replace("V", "01010110");
+            text = text.replace("W", "01010111");
+            text = text.replace("X", "01011000");
+            text = text.replace("Y", "01011001");
+            text = text.replace("Z", "01011010");
+        }
+    document.getElementById("textE").value = text;
 }, 2000);
-setTimeout(function(){document.getElementById("textE").className = '';},4010);}
+setTimeout(function(){document.getElementById("textE").className = '';},4010);
+}
     </script>
     
   </body>
