@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      background-color: #3c3c3d;
+    }
+
+    table,
+    th,
+    td {
+      border: 2px solid #b7ac2c;
+      border-collapse: collapse;
+      background-color: #262625;
+    }
+
+    th,
+    td {
+      padding: 5px;
+      text-align: center;
+    }
+
+    td {
+      color: yellow;
+    }
+
+    th {
+      color: white;
+    }
+
+    p {
+      color: white;
+    }
+  </style>
+      <meta name="author" content="Ned Notta">
+    <link rel="shortcut icon" href='./Images/47Bytes.png'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+  <table id="table" style='width:100%;'></table>
+
+  <script>
+    var x, xmlhttp, xmlDoc
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "Admins.xml", false);
+    xmlhttp.send();
+    xmlDoc = xmlhttp.responseXML;
+    x = xmlDoc.getElementsByTagName("admin");
+    table = "<tr><th>ID</th><th>Name</th><th>Role</th></tr>";
+    for (i = 0; i < x.length; i++) {
+      table += "<tr><td>";
+      table += x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue;
+      table += "</td><td>";
+      table += x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+      table += "</td><td>";
+      table += x[i].getElementsByTagName("role")[0].childNodes[0].nodeValue;
+      table += "</td></tr>";
+    }
+    document.getElementById("table").innerHTML = table;
+  </script>
+
+  <p>Disclaimer; Not real names.</p>
+
+</body>
+
+</html>
