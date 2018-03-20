@@ -48,13 +48,13 @@ function convert() {
 document.getElementById("textE").className = 'start';
     var text = document.getElementById("textE").value;
     var n = text.length;
-  var output = '':
+    var output = '':
     document.getElementById("textE").value = "loading...";
     setTimeout(function(){
-    output.value = "";
-     for (var i = 0; i < text.length; i++) {
-        output.value += text[i].charCodeAt(0).toString(2) + " ";
-    }
+      output.value = "";
+      for (var i = 0; i < text.length; i++) {
+         output.value += text[i].charCodeAt(0).toString(2) + " ";
+      }
     document.getElementById("textE").value = output;
 }, 2000);
 setTimeout(function(){document.getElementById("textE").className = '';},4010);
