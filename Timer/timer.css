@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+body {
+  margin: 0;
+  text-align:center;
+}
+.clock {
+  font-family: 'VT323', monospace;
+}
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+ul.topnav li {
+  float: left;
+}
+ul.topnav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+ul.topnav li a:hover:not(.active) {
+  background-color: #111;
+}
+ul.topnav li a.active {
+  background-color: #4CAF50;
+}
+ul.topnav li.right {
+  float: right;
+}
+@media screen and (max-width: 600px){
+    ul.topnav li.right, 
+    ul.topnav li {float: none;}
+}
+#Live_Clock{
+  border-radius: 25px;
+  padding:10px;
+  border: 3px solid blue;
+  background-color:lightBlue;
+  height:50px;
+}
+#Live_Clocks, #countDown {
+  font-family:monospace;
+}
+#Live_MS {
+  border-radius: 25px;
+  padding:10px;
+  border: 3px solid red;
+  background-color:pink;
+  height:50px;
+}
+#Live_StopWatch,#countDown_Live {
+  border-radius: 25px;
+  padding:10px;
+  border: 3px solid green;
+  background-color:#98FB98;
+}
+#stopWatch {
+  display:none;
+}
+button {
+  border-radius: 10px;
+  padding:10px;
+  border: 3px solid gray;
+  background-color:black;
+  color:white;
+  height:50px;
+}
+button:hover{
+  border-radius: 10px;
+  padding:10px;
+  color:black;
+  border: 3px solid green;
+  background-color:#98FB98;
+  height:50px;
+}
+input{
+  border-radius: 10px;
+  padding:10px;
+  border: 3px solid gray;
+  background-color:black;
+  color:white;
+}
+#viewCD{
+  display:none;
+}
+#countDown,#stopWatch{
+  display:none;
+}
