@@ -1,72 +1,80 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <style>
-    a {
-      color:lightBlue;
-    }
-    body {
-      background-color: #3c3c3d;
-    }
-
-    table,
-    th,
-    td {
-      border: 2px solid #b7ac2c;
-      border-collapse: collapse;
-      background-color: #262625;
-    }
-
-    th,
-    td {
-      padding: 5px;
-      text-align: center;
-    }
-
-    td {
-      color: yellow;
-    }
-
-    th {
-      color: white;
-    }
-
-    p {
-      color: white;
-    }
-  </style>
-      <meta name="author" content="Ned Notta">
-    <link rel="shortcut icon" href='./Images/47Bytes.png'>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
+    <title>Convert JSON Data to HTML Table Example</title>
+    <style>
+        table, th, td 
+        {
+            margin:10px 0;
+            border:solid 1px #333;
+            padding:2px 4px;
+            font:15px Verdana;
+        }
+        th {
+            font-weight:bold;
+        }
+    </style>
 </head>
-
 <body>
-  <table id="table" style='width:100%;'></table>
-
+    <input type="button" onclick="CreateTableFromJSON()" value="Create Table From JSON" />
+    <div id="showData"></div>
+  
   <script>
-    var x, xmlhttp, xmlDoc
-    xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", "Admins.xml", false);
-    xmlhttp.send();
-    xmlDoc = xmlhttp.responseXML;
-    x = xmlDoc.getElementsByTagName("admin");
-    table = "<tr><th>ID</th><th>Name</th><th>Role</th></tr>";
-    for (i = 0; i < x.length; i++) {
-      table += "<tr><td>";
-      table += x[i].getElementsByTagName("id")[0].childNodes[0].nodeValue;
-      table += "</td><td>";
-      table += x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
-      table += "</td><td>";
-      table += x[i].getElementsByTagName("role")[0].childNodes[0].nodeValue;
-      table += "</td></tr>";
+    
+    
+    function CreateTableFromJSON() {
+        var Admins = [
+          {
+            "Admin ID" : "1",
+            "Admin Name" : "Ned",
+            "Admin Role" : "Main Dev",
+          },
+          {
+            "Admin ID" : "2",
+            "Admin Name" : "Attention Whore",
+            "Admin Role" : "Form Tester",
+          },
+          {
+            "Admin ID" : "3",
+            "Admin Name" : "Old Lady",
+            "Admin Role" : "Form Tester",
+          },
+          {
+            "Admin ID" : "4",
+            "Admin Name" : "Salty",
+            "Admin Role" : "Colour Advisor",
+          }
+        ]
+        var col = ["ID","Name","Role"];
+        for (var i = 0; i < Admins.length; i++) {
+            for (var key in Admins[i]) {
+                if (col.indexOf(key) === -1) {
+                    col.push(key);
+                }
+            }
+        }
+        var table = document.createElement("table");
+        var tr = table.insertRow(-1);
+        for (var i = 0; i < col.length; i++) {
+            var th = document.createElement("th");
+            th.innerHTML = col[i];
+            tr.appendChild(th);
+        }
+        for (var i = 0; i < Admins.length; i++) {
+
+            tr = table.insertRow(-1);
+
+            for (var j = 0; j < col.length; j++) {
+                var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = Admins[i][col[j]];
+            }
+        }
+        var divContainer = document.getElementById("showData");
+        divContainer.innerHTML = "";
+        divContainer.appendChild(table);
     }
-    document.getElementById("table").innerHTML = table;
+    
+    
   </script>
-
-  <p>Disclaimer; Not real names.</p>
-
+  
 </body>
-
-</html>
