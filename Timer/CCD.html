@@ -20,23 +20,32 @@
      </p>
     <a href='../timer/'>Wanna make your own count down? Go here!</a>
     <script>
+function getVar(url){
+  url = url.split("?")[1];
+  for (i=0;i < url.length;i++){
+    if (url[i] === "&") {
+      vars++;
+    }
+  }
+  for (i=0;i < vars;i++){
+    totalVars.push(url.split("&")[i])
+  }
+  for (i=0;i < totalVars.length;i++){
+    varNames.push(totalVars[i].split("=")[0]);
+    varValues.push(totalVars[i].split("=")[1]);
+  }    
+}
 function load(){
-  var HREF = window.location.href;
-    HREF = HREF.toString();
-    var HREF_INFO = HREF.substr(HREF.indexOf('?'), HREF.length); 
-    var HREF_INFO_EVENT = HREF_INFO.substr(HREF_INFO.indexOf('?'), HREF_INFO.indexOf('+'));
-    var HREF_INFO_DATE = HREF_INFO.substr(HREF_INFO.indexOf('+'), HREF_INFO.indexOf('+')[1]);
-	  var HREF_INFO_MESSAGE = HREF_INFO_DATE.split("+")[2];
-    HREF_INFO_DATE = HREF_INFO_DATE.split("+")[1];
-    for (i = 0; i < HREF_INFO_EVENT.length; i++) { 
-    HREF_INFO_EVENT = HREF_INFO_EVENT.replace("%20"," ");
-    HREF_INFO_EVENT = HREF_INFO_EVENT.replace("%27","'");
-		}
-  	for (i = 0; i < HREF_INFO_EVENT.length; i++) { 
-    HREF_INFO_MESSAGE = HREF_INFO_MESSAGE.replace("%20"," ");
-    HREF_INFO_MESSAGE = HREF_INFO_MESSAGE.replace("%27","'");
-		}
-    HREF_INFO_EVENT = HREF_INFO_EVENT.replace("?","");
+  var vars = 1;
+  var totalVars = [];
+  var varNames = [];
+  var varValues = [];
+	
+	getVar(window.href.location);
+	
+	var HREF_INFO_DATE = varValues[1];
+	var HREF_INFO_EVENT = varValues[0];
+	var HREF_INFO_MESSAGE = varValues[2];
     
   var x = setInterval(function() {
   var now = new Date().getTime();
