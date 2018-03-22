@@ -213,3 +213,6 @@ function remakeCD() {
 	document.getElementById("newCD").style.display = 'block';
 	document.getElementById("viewCD").style.display = 'none';
 }
+function disclaimer() {
+	window.open('win.html', 'popup1', 'width=200,height=300,toolbar=0,location=0,status=0,menubar=0,scrollbars=0,resizable=0');
+}
