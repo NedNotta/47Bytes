@@ -12,8 +12,8 @@ var Unit = " Seconds";
 var ADDEDMS = 0;
 
 function set_LiveClock() {
-	var clock = document.getElementById("time_Display");
-	var day_clock = document.getElementById("date_Display");
+	var clock = $("#time_Display");
+	var day_clock = $("#date_Display");
 	var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 	var a = new Date();
 	var Day = a.getDate();
@@ -65,55 +65,55 @@ setInterval(set_LiveClock, 1);
 
 function setMS() {
 	MS += 1;
-	document.getElementById("MS_Display").innerHTML = MS + Unit + "!";
+	$("#MS_Display").innerHTML = MS + Unit + "!";
 }
 setInterval(setMS, 1000);
 
 function addMS() {
 	ADDEDMS += 1;
-	document.getElementById("Live_StopWatch").innerHTML = ADDEDMS;
+	$("#Live_StopWatch").innerHTML = ADDEDMS;
 }
 
 function closeAll() {
-	document.getElementById("Live_Clocks").style.display = 'none';
-	document.getElementById("stopWatch").style.display = 'none';
-	document.getElementById("countDown").style.display = 'none';
-	document.getElementById("countDown_LI").className = '';
-	document.getElementById("Live_Clocks_LI").className = '';
-	document.getElementById("stopWatch_LI").className = '';
+	$("#Live_Clocks").style.display = 'none';
+	$("#stopWatch").style.display = 'none';
+	$("countDown").style.display = 'none';
+	$("#countDown_LI").className = '';
+	$("#Live_Clocks_LI").className = '';
+	$("#stopWatch_LI").className = '';
 }
 
 function showSW() {
 	closeAll();
-	document.getElementById("stopWatch").style.display = 'block';
-	document.getElementById("stopWatch_LI").className = 'active';
+	$("#stopWatch").style.display = 'block';
+	$("stopWatch_LI").className = 'active';
 }
 
 function showLC() {
 	closeAll();
-	document.getElementById("Live_Clocks").style.display = 'block';
-	document.getElementById("Live_Clocks_LI").className = 'active';
+	$("#Live_Clocks").style.display = 'block';
+	$("#Live_Clocks_LI").className = 'active';
 }
 
 function showCD() {
 	closeAll();
-	document.getElementById("countDown").style.display = 'block';
-	document.getElementById("countDown_LI").className = 'active';
+	$("#countDown").style.display = 'block';
+	$("#countDown_LI").className = 'active';
 }
 var PPC = 0;
 
 function start() {
 	ADDEDMS = 0;
 	PPC = 1;
-	document.getElementById("SB").innerHTML = "Stop";
-	document.getElementById("SB").onclick = stop;
+	$(#"SB").innerHTML = "Stop";
+	$("#SB").onclick = stop;
 }
 
 var lastData = 0;
 var lapN = 1;
 
 function lap() {
-	var data = document.getElementById("Live_StopWatch").innerHTML;
+	var data = $("#Live_StopWatch").innerHTML;
 	var data_end = " Seconds";
   data -= lastData;
 	if (data > 60){
@@ -125,7 +125,7 @@ function lap() {
 		data /= 24;
 	  data_end = " Days";
 	}
-	document.getElementById("lapBox").innerHTML += "<br>Lap: "+lapN+" "+data + data_end;
+	$("#lapBox").innerHTML += "<br>Lap: "+lapN+" "+data + data_end;
 	lastData = data;
 	data = 0;
 	data_end = 0;
@@ -134,19 +134,19 @@ function lap() {
 
 function addMS() {
 	ADDEDMS += PPC;
-	document.getElementById("Live_StopWatch").innerHTML = ADDEDMS;
+	$("#Live_StopWatch").innerHTML = ADDEDMS;
 }
 setInterval(addMS, 1000);
 
 function stop() {
 	PPC = 0;
-	document.getElementById("SB").innerHTML = "Restart";
-	document.getElementById("SB").onclick = start;
+	$("#SB").innerHTML = "Restart";
+	$("#SB").onclick = start;
 }
 
 function setNewCountDown(Event, Date1, Message) {
-	document.getElementById("newCD").style.display = 'none';
-	document.getElementById("viewCD").style.display = 'block';
+	$("#newCD").style.display = 'none';
+	$("#viewCD").style.display = 'block';
 
 	if (Message.length === 0) {
 		Message = "Frohes neues Jahr Philip";
@@ -171,14 +171,14 @@ function setNewCountDown(Event, Date1, Message) {
 		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-		document.getElementById("countDown_Live").innerHTML = days + " Days // " + hours + " Hours //  " +
+		#("#countDown_Live").innerHTML = days + " Days // " + hours + " Hours //  " +
 			minutes + " Minutes // " + seconds + " Seconds";
 		if (distance < 0) {
 			clearInterval(x);
-			document.getElementById("countDown_Live").innerHTML = Message;
+			$("#countDown_Live").innerHTML = Message;
 		}
 	}, 1000);
-	document.getElementById("title1").innerHTML = Event;
+	$("#title1").innerHTML = Event;
 	for (i = 0; i < Event.length; i++) {
 		Event = Event.replace(" ", "%20");
 		Event = Event.replace("'", "%27");
@@ -189,19 +189,19 @@ function setNewCountDown(Event, Date1, Message) {
 	}
 	var link = window.location.href + "CCD?" + Event + "+" + Date1 + "+" + Message;
 	var EB = "<iframe src=&apos;" + link + "&apos; height=&apos;400&apos;  width=&apos;300&apos; style=&apos;border:3px solid black;&apos;></iframe>"
-	document.getElementById("EBCD").innerHTML = "<input type='text' value='" + EB + "' id='EBREL'><button onClick='CopyCode()'>Copy Code</button>"
-	document.getElementById("URLCD").innerHTML = "<input type='text' value='" + link + "' id='linkREL'><button onClick='CopyLink()'>Copy Link</button>";
+	$("#EBCD").innerHTML = "<input type='text' value='" + EB + "' id='EBREL'><button onClick='CopyCode()'>Copy Code</button>"
+	$("#URLCD").innerHTML = "<input type='text' value='" + link + "' id='linkREL'><button onClick='CopyLink()'>Copy Link</button>";
 }
 
 function CopyCode() {
-	var copyText = document.getElementById("EBREL");
+	var copyText = $("#EBREL");
 	copyText.select();
 	document.execCommand("Copy");
 	alert("Copied the code");
 }
 
 function CopyLink() {
-	var copyText = document.getElementById("linkREL");
+	var copyText = $("#linkREL");
 	copyText.select();
 	document.execCommand("Copy");
 	alert("Copied the link");
@@ -210,8 +210,8 @@ function CopyLink() {
 function remakeCD() {
 	closeAll();
 	showCD();
-	document.getElementById("newCD").style.display = 'block';
-	document.getElementById("viewCD").style.display = 'none';
+	$("#newCD").style.display = 'block';
+	$("#viewCD").style.display = 'none';
 }
 function disclaimer() {
 	window.open('win.html', 'popup1', 'width=600,height=300,toolbar=0,location=0,status=0,menubar=0,scrollbars=0,resizable=0');
