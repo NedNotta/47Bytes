@@ -8,7 +8,9 @@ function closeAll(){
   document.getElementById("CCW").style.display = 'none';
   document.getElementById("CCWBUTTON").className='';
 }
-
+$('#Menu').click({
+  alert("HEading to menu");
+});
 function showMenu(){
   closeAll();
   document.getElementById("Menu").style.display = 'block';
