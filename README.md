@@ -1,5 +1,3 @@
-<div style='text-align:center;'>
-
 # Apps I have made:
 ***
 ## Hosted on 47Bytes
@@ -11,5 +9,8 @@
 [<img src='https://github.com/NedNotta/47Bytes/blob/master/Images/Check.png' width='100px' height='100px'>](https://nednotta.github.io/47Bytes/Correction)
 ***
 
+## Not hosted on 47Bytes
 
-</div>
+#### Nothing here yet...
+***
+
