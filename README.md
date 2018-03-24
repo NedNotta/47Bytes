@@ -1,10 +1,10 @@
 # 47Bytes
 
-##Code Snippets
+## Code Snippets
 
-###XML
+### XML
 
-####Admins
+#### [Admins](nednotta.github.io/Admins/)
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <ADMINS>
