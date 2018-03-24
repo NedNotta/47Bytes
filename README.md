@@ -4,7 +4,7 @@
 
 ### XML
 
-#### [Admins](nednotta.github.io/Admins/)
+#### [Admins.xml](https://github.com/NedNotta/47Bytes/blob/master/Admins/Admins.xml)
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <ADMINS>
