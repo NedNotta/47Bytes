@@ -1,5 +1,10 @@
 # 47Bytes
 
+##Code Snippets
+
+###XML
+
+####Admins
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <ADMINS>
