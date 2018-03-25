@@ -187,7 +187,7 @@ function setNewCountDown(Event, Date1, Message) {
 		Message = Message.replace(" ", "%20");
 		Message = Message.replace("'", "%27");
 	}
-	var link = "https://47Bytes.bitballoon.com/timer/CCD?" + Event + "+" + Date1 + "+" + Message;
+	var link = window.location.href+"CCD?" + Event + "+" + Date1 + "+" + Message;
 	var EB = "<iframe src=&apos;" + link + "&apos; height=&apos;400&apos;  width=&apos;300&apos; style=&apos;border:3px solid black;&apos;></iframe>"
 	document.getElementById("EBCD").innerHTML = "<input type='text' value='" + EB + "' id='EBREL'><button onClick='CopyCode()'>Copy Code</button>"
 	document.getElementById("URLCD").innerHTML = "<input type='text' value='" + link + "' id='linkREL'><button onClick='CopyLink()'>Copy Link</button>";
